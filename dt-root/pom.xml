@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>dt-saas-db</module>
-        <!--<module>dt-saas-db-example</module>-->
+        <module>dt-saas-db-example</module>
     </modules>
 
     <properties>
