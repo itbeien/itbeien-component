@@ -6,7 +6,7 @@
 
     <groupId>cn.itbeien.root</groupId>
     <artifactId>dt-root</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
         <module>dt-saas-db</module>
@@ -30,6 +30,7 @@
         <nacos-config-spring-boot-starter-version>0.2.12</nacos-config-spring-boot-starter-version>
         <mybatis-spring-boot-version>3.0.4</mybatis-spring-boot-version>
         <spring-data-redis-version>3.4.2</spring-data-redis-version>
+        <revision>1.0-SNAPSHOT</revision>
     </properties>
 
 
