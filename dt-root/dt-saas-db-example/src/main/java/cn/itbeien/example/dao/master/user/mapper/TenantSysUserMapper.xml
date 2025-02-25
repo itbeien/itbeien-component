@@ -107,31 +107,31 @@
   <insert id="insertSelective" parameterType="cn.itbeien.example.entity.SysUser">
     insert into sys_user_mybatis
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+      <if test="row.id != null">
         id,
       </if>
-      <if test="name != null">
+      <if test="row.name != null">
         name,
       </if>
-      <if test="age != null">
+      <if test="row.age != null">
         age,
       </if>
-      <if test="email != null">
+      <if test="row.email != null">
         email,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
+      <if test="row.id != null">
+        #{row.id,jdbcType=BIGINT},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="row.name != null">
+        #{row.name,jdbcType=VARCHAR},
       </if>
-      <if test="age != null">
-        #{age,jdbcType=INTEGER},
+      <if test="row.age != null">
+        #{row.age,jdbcType=INTEGER},
       </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
+      <if test="row.email != null">
+        #{row.email,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

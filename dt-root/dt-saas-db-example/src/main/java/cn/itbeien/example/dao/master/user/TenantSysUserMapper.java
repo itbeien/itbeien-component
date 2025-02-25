@@ -26,7 +26,7 @@ public interface TenantSysUserMapper {
 
     int insert(SysUser row);
 
-    int insertSelective(SysUser row);
+    int insertSelective(@Param("row") SysUser row,@Param("tenantCode") String tenantCode);
 
     List<SysUser> selectByExample(SysUserExample example);
 

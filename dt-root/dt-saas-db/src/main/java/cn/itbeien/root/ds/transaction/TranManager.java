@@ -27,7 +27,7 @@ public class TranManager extends DataSourceManager {
         ConnectionHolder holder = localMap.get(dataSource);
         if (holder == null) {
             holder = localMap.putIfAbsent(dataSource, newConnectionHolder(dataSource));
-            //holder = localMap.get(dataSource);
+            holder = localMap.get(dataSource);
         }
         return holder;
     }
@@ -51,7 +51,7 @@ public class TranManager extends DataSourceManager {
         if (manager == null) {
             manager = localMap.putIfAbsent(dataSource, new JdbcTransactionManager(dataSource) {
             });
-            //manager = localMap.get(dataSource);
+            manager = localMap.get(dataSource);
         }
         return manager;
     }

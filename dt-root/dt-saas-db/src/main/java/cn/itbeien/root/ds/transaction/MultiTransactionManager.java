@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -132,11 +133,14 @@ public class MultiTransactionManager {
 
     public static Map<String, Object> getMethodParams(ProceedingJoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+      /*  Object[] paramValues = joinPoint.getArgs();
+        String[] paramNames = methodSignature.getParameterNames();*/
+        Method method = methodSignature.getMethod();
+        Parameter[] parameters = method.getParameters();
         Object[] paramValues = joinPoint.getArgs();
-        String[] paramNames = methodSignature.getParameterNames();
         Map<String, Object> params = new HashMap<String, Object>();
         for (int i = 0; i < paramValues.length; i++) {
-            params.put(paramNames[i], paramValues[i]);
+            params.put(parameters[i].getName(), paramValues[i]);
         }
         return params;
     }
